@@ -1,6 +1,6 @@
 from dotenv import dotenv_values
 
-cvars = {**dotenv_values(".env.secret"), **dotenv_values(".env.shared")}
+cvars = {**dotenv_values(".env"), **dotenv_values(".env.shared")}
 
 if "BEARER_TOKEN" not in cvars.keys():
     raise ValueError("Bearer token missing from env secret file")
